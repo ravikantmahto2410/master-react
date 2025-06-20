@@ -28,20 +28,23 @@ export default function Footer() {
                                         About
                                     </Link>
                                 </li>
+                                <li>
+                                    <Link to="/contact" className="hover:underline">
+                                        Contact Us
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <a
-                                        href="https://github.com/hiteshchoudhary"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noreferrer"
+                                    <Link
+                                        to="/github"
+                                        className='hover:underline'
                                     >
                                         Github
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <Link to="/" className="hover:underline">
@@ -71,9 +74,9 @@ export default function Footer() {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center">
                         © 2023
-                        <a href="https://hiteshchoudhary.com/" className="hover:underline">
+                        <Link to="https://hiteshchoudhary.com/" className="hover:underline">
                             hiteshchoudhary
-                        </a>
+                        </Link>
                         . All Rights Reserved.
                     </span>
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">

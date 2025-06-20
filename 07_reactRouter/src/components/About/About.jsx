@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function About() {
     return (
         <div className="py-16 bg-white">
@@ -15,6 +16,8 @@ export default function About() {
                         <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
                             React development is carried out by passionate developers
                         </h2>
+                        
+                        <h1></h1>
                         <p className="mt-6 text-gray-600">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum omnis voluptatem
                             accusantium nemo perspiciatis delectus atque autem! Voluptatum tenetur beatae unde
