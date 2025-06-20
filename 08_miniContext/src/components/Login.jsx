@@ -6,11 +6,16 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    
+    //UserContext ke ander jo values hai wo kaise fetch karunga mein  uske liye help karta hai ye useContext
 
-    const handleSubmit = () => {
+    const {setUser} = useContext(UserContext)  //setUser hum yahan UserContext se le rhe hai
 
+    const handleSubmit = (e) => {  //ye to huibaat bhejne ki 
+        e.preventDefault()
+        setUser({username,password})
     }
+
+
 
   return (
     <div>
