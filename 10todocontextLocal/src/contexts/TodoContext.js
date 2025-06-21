@@ -15,7 +15,7 @@ export const TodoContext = createContext({
     //forexample addTodo: (todo) => {} addTodo kaise functionalities hai kuch nhi aap ek todoYahan paass karoge(todo means message) , to  message aap jaise mujhe pass karoge to ye function kuch kaam karega, kya kaam kya karega nhi pata ye kon kaam karega ye hum decide karenge bahar decide karenge
     
     addTodo: (todo) => {},
-    updatedTodo: (id, todo) => {},
+    updateTodo: (id, todo) => {},
     deleteTodo: (id) => {},
     toggleComplete: (id) => {}
 })
