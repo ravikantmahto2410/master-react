@@ -12,7 +12,7 @@ const UserContextProvider = ({children}) => {  //jo bhi prop aa rhe hai children
         <>
         {/*isss fragment ke ander jo kuch bhi aa rha hai usko as it is render karwa denge  , ab ho sakta hai ismein card component aaa rha hai , ho sakta hai card ke ander dashboard  aaeye */}
             
-            <UserContext.Provider value={{user, setUser}}>    {/*provider se wrap to ka diya , but actually kon si value ko access de rhe ho , wo bhi to batana padega, uske liye provider ke ander ek property milti hai value={{user, setUser}} */}
+            <UserContext.Provider value={{user, setUser}}>    {/*provider se wrap to kar diya , but actually kon si value ko access de rhe ho , wo bhi to batana padega, uske liye provider ke ander ek property milti hai value={{user, setUser}} */}
                 {children}
             </UserContext.Provider>
         </>
