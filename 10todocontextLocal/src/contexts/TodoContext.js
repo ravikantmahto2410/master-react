@@ -2,6 +2,15 @@ import { useContext, createContext } from "react";
 
 
 export const TodoContext = createContext({
+    todos: [
+        // {},{},{}  //har ek todo hoga wo ek object hoga aur hum aise add karenge
+
+        {
+            id:1,
+            todo: "Todo Message", //isko aap todo bol do, todo Title bol lo, todoMsg bollo
+            completed:false,
+        }
+    ] //ye to hogyi properties aur next likhne padegi functionalities
     
 })
 
