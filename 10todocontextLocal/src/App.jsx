@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { TodoProvider } from './contexts'
+import TodoForm from './components/TodoForm'
+import TodoItem from './components/TodoItem'
 
 function App() {
 
@@ -29,8 +31,24 @@ function App() {
   const toggleComplete = (id) => {
     // setTodos((prev) => )      setTodos ek array hai aur array ke har prev state ka mujhe access chahiye so iss tarah humein prevAccess mil gaya hai
 
-    setTodos((prev) => prev.map((prevTodo) => prevTodo === id ? {...prevTodo,completed : !prevTodo.completed} : prevTodo ))
+    setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo,completed : !prevTodo.completed} : prevTodo ))
   }
+
+  useEffect(() => {
+    // localStorage.getItem("todos") //todos is the name of key //set karne time humein batana padta hai ki key kya rakhoge aur value kya rakhoge , aur get karne time bas ss key ka naam rakho aur value mil jaati hai   ////////localstorgae mein saari ki saari vallue hoti hai string mein 
+    const todos = JSON.parse(localStorage.getItem("todos"))   // so humein loclastorage mein rakhi value iss tarah se laate hai
+
+    //ab values ko set karni hai agar values hai to
+    if(todos && todos.length > 0){
+      setTodos(todos)
+    }
+  },[])
+  //Note we can use multiple useEffect
+  //ek kaam aur hai local storage ka ki jaise hi ye values todos mein add ho rhi hai mein uss value ko localStorage mein add karwana chahta hun, 
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  },[todos])
+
 
   return (
     <TodoProvider value={{todos, addTodo, updateTodo, deleteTodo, toggleComplete}}> {/*now dhyaan ye rakho ki todos ek property hai to value aa rhi hai, aur addTodo, updatedTodo, deleteTodo, toggleComplete ye saare methods hai to to methods aa rhe hai */}
@@ -38,10 +56,19 @@ function App() {
           <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
               <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
               <div className="mb-4">
-                  {/* Todo form goes here */} 
+                  <TodoForm/> 
               </div>
               <div className="flex flex-wrap gap-y-3">
                   {/*Loop and Add TodoItem here */}
+
+                  {todos.map((todo) => (
+                    <div
+                      className='w-full'
+                      key={todo.id}
+                    >
+                    <TodoItem todo = {todo}/>
+                    </div>
+                  ))}
               </div>
           </div>
       </div>
