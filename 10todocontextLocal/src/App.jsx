@@ -23,6 +23,19 @@ function App() {
     setTodos((prev) => prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo)))
   }
 
+  /*or we can write updateTodo like this
+  const updateTodo = (id, todo) => {
+    setTodos((prev) => prev.map((eachVal) => {
+      if(eachVal.id === id) {
+        todo
+      }
+      else{
+        prevTodo
+      }
+    }))
+  }
+  */
+
   const deleteTodo = (id) => {
     setTodos((prev) => prev.filter((prevTodo) => prevTodo.id !== id) )    //delete ke case mein .map loop achha option nhi hai yahan filter method is good
   
