@@ -6,3 +6,11 @@ const initialState = {  //store ke ander sabse important cheez hoti hai initialS
     todos: [{id: 1, text: "Hello World"}]
 }
 
+
+//now we will make slice , slice kkuch nhi reducer ka ek bada bhai hai , aur reducer kuch nhi bas ek functionality hai
+
+export const todoSlice = createSlice({
+    name : 'todo',//property ka naam name hi hota hai yahan redux Toolkit mein
+    initialState,     //multiple slices banti hai but har ek slice ka ek initialState hota hai
+    reducers: {}   // ye ban ggya reducer  , iske ander aati hai property aur function
+})
