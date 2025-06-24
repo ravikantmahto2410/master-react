@@ -44,7 +44,7 @@ function App() {
   const toggleComplete = (id) => {
     // setTodos((prev) => )      setTodos ek array hai aur array ke har prev state ka mujhe access chahiye so iss tarah humein prevAccess mil gaya hai
 
-    setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo,completed : !prevTodo.completed} : prevTodo ))
+    setTodos((prev) => prev.map((prevTodo) => prevTodo.id === id ? {...prevTodo, completed : !prevTodo.completed} : prevTodo ))
   }
 
   useEffect(() => {
