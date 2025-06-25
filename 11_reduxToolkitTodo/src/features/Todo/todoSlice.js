@@ -23,6 +23,9 @@ export const todoSlice = createSlice({
             state.todos.push(todo)
 
         },    
-        removeTodo: () => {},                        
+        removeTodo: (state, action) => {//state ke ander milta hai jo bhi hamara abhi current state hai
+            state.todos = state.todos.filter((todo) => todo.id !== action.payload.id)
+        },                         
     }   // ye ban ggya reducer  , iske ander aati hai property aur function
 })
+///assignemnt write reducers for delete  kaise hoga , update kaise hoga
