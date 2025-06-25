@@ -12,14 +12,15 @@ const initialState = {  //store ke ander sabse important cheez hoti hai initialS
 export const todoSlice = createSlice({
     name : 'todo',//property ka naam name hi hota hai yahan redux Toolkit mein
     initialState,     //multiple slices banti hai but har ek slice ka ek initialState hota hai
-    reducers: {
+    reducers: { //reducers ke andder aata hai properties and functions
         addTodo: (state, action) => {//ye function to kahin chein aur bhi ho skakta hai auer uska refernce dena naa ki call karna hai,      //yahan par Hamesha humein do cheezein milegi ek milega state and ek milega action (state, action ) inn dono ka access hamesha hamare paas rahega,   //state mein hame milega un sab ka access jo jo abhi intialState mein hai
-                //id dene ke liye humein wo values action se milti hai               //
+            //id dene ke liye humein wo values action se milti hai               //
 
-                const todo = {
-                    id: nanoid(), 
-                    text: action.payload   //payload apne aap mein ek object hai
-                } 
+            const todo = {
+                id: nanoid(), 
+                text: action.payload.text  //payload apne aap mein ek object hai
+            }
+            state.todos.push(todo)
 
         },    
         removeTodo: () => {},                        
