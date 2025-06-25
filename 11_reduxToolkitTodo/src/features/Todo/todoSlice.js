@@ -28,4 +28,12 @@ export const todoSlice = createSlice({
         },                         
     }   // ye ban ggya reducer  , iske ander aati hai property aur function
 })
-///assignemnt write reducers for delete  kaise hoga , update kaise hoga
+
+
+
+//abhi tak todoSlice  export kar diya hai lekin ye iss tarah se export nhi kiya jaata hai iske liye 2 tarike se export kiye jaate hai ,yebhi syntax hai nichhe wahi likhka hai
+
+
+export const {addTodo, removeTodo} = todoSlice.actions //ye individual functionality humne add kare hai , uye components mein humein kaam aaayega
+
+export default todoSlice.reducer
