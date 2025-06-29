@@ -15,16 +15,17 @@ export const todoSlice = createSlice({
     reducers: { //reducers ke andder aata hai properties and functions
         addTodo: (state, action) => {//ye function to kahin chein aur bhi ho skakta hai auer uska refernce dena naa ki call karna hai,      //yahan par Hamesha humein do cheezein milegi ek milega state and ek milega action (state, action ) inn dono ka access hamesha hamare paas rahega,   //state mein hame milega un sab ka access jo jo abhi intialState mein hai
             //id dene ke liye humein wo values action se milti hai               //
-
+            //here state ke ander updated state value  in the store milti hai
+            //action ke ander humein action.payload milta hai
             const todo = {
                 id: nanoid(), 
-                text: action.payload.text  //payload apne aap mein ek object hai
+                text: action.payload  //payload apne aap mein ek object hai
             }
             state.todos.push(todo)
 
         },    
         removeTodo: (state, action) => {//state ke ander milta hai jo bhi hamara abhi current state hai
-            state.todos = state.todos.filter((todo) => todo.id !== action.payload.id)
+            state.todos = state.todos.filter((todo) => todo.id !== action.payload)
         },                         
     }   // ye ban ggya reducer  , iske ander aati hai property aur function
 })
@@ -34,6 +35,6 @@ export const todoSlice = createSlice({
 //abhi tak todoSlice  export kar diya hai lekin ye iss tarah se export nhi kiya jaata hai iske liye 2 tarike se export kiye jaate hai ,yebhi syntax hai nichhe wahi likhka hai
 
 
-export const {addTodo, removeTodo} = todoSlice.actions //ye individual functionality humne add kare hai , uye components mein humein kaam aaayega
+export const {addTodo, removeTodo} = todoSlice.actions //ye individual functionality humne add kare hai , uye components mein humein kaam aaayega  //agar hamare paas 10 reducers hai to 10 individaula reducers ko export karna padega, because humlog ko nhi pata ki kkon sa components mein kon sa reducer use ho jaaye
 
-export default todoSlice.reducer
+export default todoSlice.reducer //aur ek chahiye humein saare reducers ka main source export karna , 

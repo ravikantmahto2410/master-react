@@ -28,3 +28,10 @@ import todoReducer from '../features/Todo/todoSlice'
 export const store = configureStore({
     reducer: todoReducer
 }) //ye apne ander object hi leta hai, most of the cheezein yahan apne aap mein object hi legi
+
+
+
+
+
+
+//Interview question : har ek application ka ek hi application hota hai ,jisko bola jaata hai single source of truth
